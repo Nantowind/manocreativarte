@@ -137,8 +137,15 @@ video {
   border-left-color: transparent;
 }
 
-/* test */
+/* Emoticones y stickers a la venta */
+.custom-img {
+    max-width: 60%;
+    height: auto;
+}
 
+.mb-4 {
+    margin-bottom: 15px;
+}
 
 /* footer */
 .footer {
