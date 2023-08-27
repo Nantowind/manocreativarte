@@ -28,7 +28,7 @@ body > header > nav > div > a {
 }
 @media (min-width: 580px) {
   #mano-logo {
-    max-width: 45% !important;
+    max-width: 60% !important;
     height: 100%;
   }
 }
@@ -58,7 +58,7 @@ video {
   letter-spacing: 0.1em;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
-inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+    inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
   background: -webkit-linear-gradient(top, #1eb2df, #17a7d2);
   display: inline-block;
   position: absolute;
@@ -66,37 +66,37 @@ inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
   left: 0;
 }
 .sale-status.on-sale:before {
-    content: "";
-    width: 0.2em;
-    bottom: -0.5em;
-    position: absolute;
-    display: block;
-    border: 0.9em solid #1eb2df;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
-    z-index: -2;
-    left: -1.35em;
-    border-right-width: 0.75em;
-    border-left-color: transparent;
-  }
+  content: "";
+  width: 0.2em;
+  bottom: -0.5em;
+  position: absolute;
+  display: block;
+  border: 0.9em solid #1eb2df;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  z-index: -2;
+  left: -1.35em;
+  border-right-width: 0.75em;
+  border-left-color: transparent;
+}
 
 /* cards sale sold */
 .sale-status.sold {
-    padding: 0.34em 1em;
-    margin: 0;
-    margin-top: 5%;
-    position: relative;
-    color: #ffffff;
-    text-align: center;
-    letter-spacing: 0.1em;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
-  inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
-    background: -webkit-linear-gradient(top, #e70f0f, #810303);
-    display: inline-block;
-    position: absolute;
-    top: 0%;
-    left: 0;
-  }
+  padding: 0.34em 1em;
+  margin: 0;
+  margin-top: 5%;
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  background: -webkit-linear-gradient(top, #e70f0f, #810303);
+  display: inline-block;
+  position: absolute;
+  top: 0%;
+  left: 0;
+}
 
 .sale-status.sold:before {
   content: "";
@@ -112,7 +112,63 @@ inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
   border-left-color: transparent;
 }
 
+/* test */
 
+
+/* footer */
+.footer {
+  background: #000;
+  font-family: "Play", sans-serif;
+  text-align: center;
+  width: 100%;
+
+  padding-bottom: 0.1rem;
+}
+
+.footer .row {
+  width: 100%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    text-align: left;
+    padding: 5%;
+  }
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
+  }
+  .footer .row a i {
+    margin: 0% 3%;
+  }
+}
 
 
 
