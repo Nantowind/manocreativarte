@@ -1,6 +1,6 @@
 /*navegador */
 body > header > nav {
-  background-color: #22103a !important;
+  background-color: #2E1E43 !important;
 }
 body > header > nav {
   padding-bottom: 0px !important;
@@ -9,6 +9,15 @@ body > header > nav {
 
 body > header > nav > div > a {
   padding-bottom: 0px !important;
+}
+/* 22103a  170c1b 2C2C2C */
+body{
+    background-color: #D1C0EA ;
+}
+#title *{
+    background-color: #9FAAFB ;
+    color: white;
+
 }
 
 /* Logo Maneocreativa y querys de el mismo */
@@ -22,7 +31,7 @@ body > header > nav > div > a {
 }
 @media (min-width: 380px) and (max-width: 580px) {
   #mano-logo {
-    max-width: 20% !important;
+    max-width: 30% !important;
     height: 100%;
   }
 }
@@ -32,13 +41,29 @@ body > header > nav > div > a {
     height: 100%;
   }
 }
-/* Clases generales  */
 
-.bg-grey {
-  background-color: #f5f8fa;
-}
 
 /* cards */
+
+.card-color{
+    border-color: #D79BE8;
+    border : 3px solid #D79BE8 !;
+    border-radius: 3px;
+}
+.card-button{
+    border-color: #D79BE8 !important;
+    border : 3px solid #D79BE8 !important;
+    border-radius: 3px;
+    background-color: #D79BE8;
+}
+.card-button:hover{
+    border-color: #A781FB !important;
+    border : 3px solid #A781FB !important;
+    border-radius: 3px;
+    background-color: #A781FB;
+}
+
+
 
 video {
   width: 100%;
