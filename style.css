@@ -1,0 +1,118 @@
+/*navegador */
+body > header > nav {
+  background-color: #22103a !important;
+}
+body > header > nav {
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+body > header > nav > div > a {
+  padding-bottom: 0px !important;
+}
+
+/* Logo Maneocreativa y querys de el mismo */
+
+@media (max-width: 380px) {
+  #mano-logo {
+    max-width: 50% !important;
+    height: 100%;
+    padding-left: 1rem;
+  }
+}
+@media (min-width: 380px) and (max-width: 580px) {
+  #mano-logo {
+    max-width: 20% !important;
+    height: 100%;
+  }
+}
+@media (min-width: 580px) {
+  #mano-logo {
+    max-width: 45% !important;
+    height: 100%;
+  }
+}
+/* Clases generales  */
+
+.bg-grey {
+  background-color: #f5f8fa;
+}
+
+/* cards */
+
+video {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* cards sale status */
+/* cards sale onsale */
+.sale-status.on-sale {
+  padding: 0.34em 1em;
+  margin: 0;
+  margin-top: 5%;
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  background: -webkit-linear-gradient(top, #1eb2df, #17a7d2);
+  display: inline-block;
+  position: absolute;
+  top: 0%;
+  left: 0;
+}
+.sale-status.on-sale:before {
+    content: "";
+    width: 0.2em;
+    bottom: -0.5em;
+    position: absolute;
+    display: block;
+    border: 0.9em solid #1eb2df;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+    z-index: -2;
+    left: -1.35em;
+    border-right-width: 0.75em;
+    border-left-color: transparent;
+  }
+
+/* cards sale sold */
+.sale-status.sold {
+    padding: 0.34em 1em;
+    margin: 0;
+    margin-top: 5%;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+  inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+    background: -webkit-linear-gradient(top, #e70f0f, #810303);
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 0;
+  }
+
+.sale-status.sold:before {
+  content: "";
+  width: 0.2em;
+  bottom: -0.5em;
+  position: absolute;
+  display: block;
+  border: 0.9em solid #810303;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  z-index: -2;
+  left: -1.35em;
+  border-right-width: 0.75em;
+  border-left-color: transparent;
+}
+
+
+
+
+
