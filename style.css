@@ -1,6 +1,6 @@
 /*navegador */
 body > header > nav {
-  background-color: #2E1E43 !important;
+  background-color: #4b2e72 !important;
 }
 body > header > nav {
   padding-bottom: 0px !important;
@@ -11,13 +11,13 @@ body > header > nav > div > a {
   padding-bottom: 0px !important;
 }
 /* 22103a  170c1b 2C2C2C */
-body{
-    background-color: #D1C0EA ;
+body {
+  background-color: #d1c0ea;
 }
-#title *{
-    background-color: #9FAAFB ;
-    color: white;
 
+#title > * {
+  background-color: #9faafb;
+  color: white;
 }
 
 /* Logo Maneocreativa y querys de el mismo */
@@ -42,28 +42,25 @@ body{
   }
 }
 
-
 /* cards */
 
-.card-color{
-    border-color: #D79BE8;
-    border : 3px solid #D79BE8 !;
-    border-radius: 3px;
+.card-color {
+  border-color: #d79be8;
+  border: 3px solid #d79be8 !;
+  border-radius: 3px;
 }
-.card-button{
-    border-color: #D79BE8 !important;
-    border : 3px solid #D79BE8 !important;
-    border-radius: 3px;
-    background-color: #D79BE8;
+.card-button {
+  border-color: #d79be8 !important;
+  border: 3px solid #d79be8 !important;
+  border-radius: 3px;
+  background-color: #d79be8;
 }
-.card-button:hover{
-    border-color: #A781FB !important;
-    border : 3px solid #A781FB !important;
-    border-radius: 3px;
-    background-color: #A781FB;
+.card-button:hover {
+  border-color: #a781fb !important;
+  border: 3px solid #a781fb !important;
+  border-radius: 3px;
+  background-color: #a781fb;
 }
-
-
 
 video {
   width: 100%;
@@ -139,13 +136,75 @@ video {
 
 /* Emoticones y stickers a la venta */
 .custom-img {
-    max-width: 60%;
-    height: auto;
+  max-width: 60%;
+  height: auto;
 }
 
 .mb-4 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
+#container-sticker {
+  background-color: #d1c0ea;
+}
+#sticker-header {
+  background-color: #ece4e4;
+}
+#sticker-body {
+  background-color: #ece4e4;
+}
+
+
+/* liston de hot sale stickers */
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 3px solid #D34240;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 165px;
+  background-color: #D34240;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  text-align: center;
+  padding-right: 0.5rem;
+  color: #333333;
+}
+
+.ribbon-top-right {
+  top: 3rem;
+  right: 3rem;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -22px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+
 
 /* footer */
 .footer {
@@ -201,6 +260,4 @@ video {
     margin: 0% 3%;
   }
 }
-
-
 
