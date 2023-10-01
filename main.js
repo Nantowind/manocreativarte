@@ -1,4 +1,5 @@
 import { SaleStatusText, SaleStatus } from './interface/vtubers.js';
+import Atropos from './atropos/atropos.js'
 const testVtuber = {
     id: "1",
     name: "AquaStream",
@@ -105,3 +106,8 @@ createCard("sale-vtubers", testVtuber3);
 createCard("sale-vtubers", testVtuber4);
 createCard("sale-vtubers", testVtuber5);
 createCard("sale-vtubers", testVtuber6);
+
+
+const myAtropos = Atropos({
+    el: '.my-atropos',
+  });

@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 /*navegador */
 body > header > nav {
@@ -76,6 +76,10 @@ body > header > nav > div > a {
 
 body {
   background-color: #EEE0C9;
+}
+
+main{
+  background-color: black;
 }
 
 #title > * {
@@ -605,4 +609,45 @@ video {
   animation-timeline: --revealing-image;
 
   animation-range: entry 25% cover 40%;
+}
+
+
+
+
+#container-character{
+  background-image: url('./assets/fondo_1.png');
+  background-size: cover;}
+
+.atropos-scale{
+  width: 100%;
+  height: 100%;
+}
+.my-atropos img{
+  width: 100%;
+  border-radius: 10%;
+}
+.my-atropos{
+  width: 70%;
+}
+
+.ver-poder-button {
+  background-color: #fcdc00; /* Fondo amarillo */
+  color: #000; /* Texto negro */
+  border: none;
+  padding: 15px 30px; /* Mayor tamaño de padding para un botón más grande */
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%; /* Posición vertical centrada */
+  left: 50%; /* Posición horizontal centrada */
+
+  transform: translateX(-50%); /* Centra horizontalmente */
+  z-index: 2; /* Asegura que el botón esté por encima de la imagen */
+  border-radius: 15px; /* Bordes redondeados */
+  font-size: 24px; /* Texto más grande */
+}
+
+/* Estilo para que el botón no sea seleccionable al hacer hover */
+.ver-poder-button:hover {
+  background-color: #ffea00; /* Cambia el color de fondo al hacer hover */
+  color: #000; /* Cambia el color del texto al hacer hover */
 }
