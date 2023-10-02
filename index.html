@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./atropos/atropos.css">
 
-    <title>Document</title>
+    <title>Manocreativarte</title>
   </head>
   <body>
     <header>
@@ -139,7 +139,7 @@
 
 
       <!-- sticker a la venta -->
-      <div class="card p-5 content-revelate" id="container-sticker">
+      <div class="card p-5" id="container-sticker">
         <div
           id="sticker-header"
           class="card-header text-center fs-4 fw-semibold border-bottom-0 border border-danger-subtle border-3"
@@ -219,15 +219,21 @@
             <!-- rotate container (required) -->
             <div class="atropos-rotate ">
               <!-- inner container (required) -->
-              <div class="atropos-inner  ">
-                <!-- put your custom content here -->
+              <div class="atropos-inner">
 
-              <img src="./assets/fondo_2.png" data-atropos-offset="1"  alt="">
-              <button class="ver-poder-button " >Ver mi poder</button>
+                <img src="./assets/fondo_2.png" data-atropos-offset="0" alt="">
+                <img src="./assets/dark_rider-character.webp" class="w-25 character" data-atropos-offset="1" alt="">
+                <img src="./assets/eliminar/chibi_1.png" class="character-chibi" style="position: absolute; top: 20%; left: 30%; max-width: 10%;" data-atropos-offset="-13" alt="">
+                <img src="./assets/eliminar/chibi_2.png" class="character-chibi" style="position: absolute; top: 40%; left: 80%; max-width: 10%;" data-atropos-offset="12" alt="">
+                <img src="./assets/eliminar/chibi_3.png" class="character-chibi" style="position: absolute; top: 60%; left: 70%; max-width: 10%;" data-atropos-offset="-14" alt="">
+                <img src="./assets/eliminar/chibi_4.png" class="character-chibi" style="position: absolute; top: 10%; left: 80%; max-width: 10%;" data-atropos-offset="9" alt="">
+                <img src="./assets/eliminar/chibi_5.png" class="character-chibi" style="position: absolute; top: 50%; left: 10%; max-width: 10%;" data-atropos-offset="15" alt="">
+                <img src="./assets/eliminar/chibi_6.png" class="character-chibi" style="position: absolute; top: 70%; left: 20%; max-width: 10%;" data-atropos-offset="-11" alt="">
+                <img src="./assets/eliminar/chibi_7.png" class="character-chibi" style="position: absolute; top: 30%; left: 60%; max-width: 10%;" data-atropos-offset="-12" alt="">
+                <button class="power-button" data-atropos-offset="1">Mira mi poder!</button>
 
-
-
-              </div>
+                
+              
             </div>
           </div>
         </div>
@@ -290,8 +296,8 @@
     <script>
       const myAtropos = Atropos({
         el: '.my-atropos',
-        activeOffset: 40,
-        duration: 10000, // Ajusta este valor para una rotación más suave (en ms)
+        activeOffset: 10,
+        duration: 1000, // Ajusta este valor para una rotación más suave (en ms)
         onEnter() {
           console.log('Enter');
         },
