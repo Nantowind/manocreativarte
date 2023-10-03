@@ -26,33 +26,6 @@ const testVtuber3 = {
     SaleStatusText: SaleStatusText.Sold,
     urlVideo: "./assets/test.mp4"
 };
-const testVtuber4 = {
-    id: "1",
-    name: "AquaStream",
-    description: "El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-    price: 150,
-    saleStatus: SaleStatus.Sold,
-    SaleStatusText: SaleStatusText.Sold,
-    urlVideo: "./assets/test.mp4"
-};
-const testVtuber5 = {
-    id: "1",
-    name: "AquaStream",
-    description: "El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-    price: 150,
-    saleStatus: SaleStatus.Sold,
-    SaleStatusText: SaleStatusText.Sold,
-    urlVideo: "./assets/test.mp4"
-};
-const testVtuber6 = {
-    id: "1",
-    name: "AquaStream",
-    description: "El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-    price: 150,
-    saleStatus: SaleStatus.Sold,
-    SaleStatusText: SaleStatusText.Sold,
-    urlVideo: "./assets/test.mp4"
-};
 function createCard(idSection, vtuber) {
     const sectionForAddDiv = document.getElementById(idSection);
     if (sectionForAddDiv) {
@@ -102,6 +75,33 @@ function createCard(idSection, vtuber) {
 createCard("sale-vtubers", testVtuber);
 createCard("sale-vtubers", testVtuber2);
 createCard("sale-vtubers", testVtuber3);
-createCard("sale-vtubers", testVtuber4);
-createCard("sale-vtubers", testVtuber5);
-createCard("sale-vtubers", testVtuber6);
+export function viewPower() {
+    let button = document.getElementById("view-power-button");
+    if (button) {
+        button.addEventListener("click", function () {
+            let containerHidden = document.getElementById("container-hide-power");
+            containerHidden === null || containerHidden === void 0 ? void 0 : containerHidden.classList.add("hidden");
+            let containerViewPower = document.getElementById("container-view-power");
+            containerViewPower === null || containerViewPower === void 0 ? void 0 : containerViewPower.classList.remove("hidden");
+        });
+    }
+    else {
+        console.log("no se encontro view-power-button");
+    }
+}
+function hidePower() {
+    let button = document.getElementById("hide-power-button");
+    if (button) {
+        button.addEventListener("click", function () {
+            let containerHidden = document.getElementById("container-view-power");
+            containerHidden === null || containerHidden === void 0 ? void 0 : containerHidden.classList.add("hidden");
+            let containerViewPower = document.getElementById("container-hide-power");
+            containerViewPower === null || containerViewPower === void 0 ? void 0 : containerViewPower.classList.remove("hidden");
+        });
+    }
+    else {
+        console.log("no se encontro view-power-button");
+    }
+}
+hidePower();
+viewPower();

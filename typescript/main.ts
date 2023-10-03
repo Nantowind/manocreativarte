@@ -28,33 +28,7 @@ import { Vtuber,SaleStatusText, SaleStatus } from './interface/vtubers.js';
         SaleStatusText: SaleStatusText.Sold,
         urlVideo: "./assets/test.mp4"
     }
-    const testVtuber4:Vtuber ={
-        id:"1",
-        name:"AquaStream",
-        description:"El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-        price:150,
-        saleStatus: SaleStatus.Sold,
-        SaleStatusText: SaleStatusText.Sold,
-        urlVideo: "./assets/test.mp4"
-    }
-    const testVtuber5:Vtuber ={
-        id:"1",
-        name:"AquaStream",
-        description:"El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-        price:150,
-        saleStatus: SaleStatus.Sold,
-        SaleStatusText: SaleStatusText.Sold,
-        urlVideo: "./assets/test.mp4"
-    }
-    const testVtuber6:Vtuber ={
-        id:"1",
-        name:"AquaStream",
-        description:"El VTuber maestro del agua, te sumergirá en emocionantes travesías acuáticas desde su estudio virtual. ",
-        price:150,
-        saleStatus: SaleStatus.Sold,
-        SaleStatusText: SaleStatusText.Sold,
-        urlVideo: "./assets/test.mp4"
-    }
+
     
     //creamos a partir de un objeto que se pasa por parametro una card
     function createCard(idSection: string,vtuber:Vtuber): void {
@@ -131,8 +105,46 @@ import { Vtuber,SaleStatusText, SaleStatus } from './interface/vtubers.js';
     createCard("sale-vtubers",testVtuber2);
     createCard("sale-vtubers",testVtuber3);
 
-    createCard("sale-vtubers",testVtuber4);
-    createCard("sale-vtubers",testVtuber5);
-    createCard("sale-vtubers",testVtuber6);
 
 
+
+export function viewPower():void{
+
+    let button: HTMLButtonElement | null = document.getElementById("view-power-button") as HTMLButtonElement | null;
+
+    if(button){
+
+        button.addEventListener("click",function(){
+         let containerHidden:HTMLDivElement |null = document.getElementById("container-hide-power") as HTMLDivElement|null;
+         containerHidden?.classList.add("hidden")
+
+         let containerViewPower:HTMLDivElement |null = document.getElementById("container-view-power") as HTMLDivElement|null;
+         containerViewPower?.classList.remove("hidden")
+
+        });
+    }else{
+        console.log("no se encontro view-power-button")
+    }
+}
+
+function hidePower():void{
+
+    let button: HTMLButtonElement | null = document.getElementById("hide-power-button") as HTMLButtonElement | null;
+
+    if(button){
+
+        button.addEventListener("click",function(){
+         let containerHidden:HTMLDivElement |null = document.getElementById("container-view-power") as HTMLDivElement|null;
+         containerHidden?.classList.add("hidden")
+
+         let containerViewPower:HTMLDivElement |null = document.getElementById("container-hide-power") as HTMLDivElement|null;
+         containerViewPower?.classList.remove("hidden")
+
+ 
+        });
+    }else{
+        console.log("no se encontro view-power-button")
+    }
+}
+hidePower();
+viewPower();

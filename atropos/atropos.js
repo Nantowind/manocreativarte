@@ -94,7 +94,7 @@ var Atropos = (function () {
     var highlightEl;
     var isScrolling;
     var clientXStart;
-    var clientYStart;
+    var clientYStart = 30;
     var queue = [];
     var queueFrameId;
     var purgeQueue = function purgeQueue() {
@@ -135,6 +135,7 @@ var Atropos = (function () {
         value: value
       });
     };
+    
     var $setOpacity = function $setOpacity(element, value) {
       queue.push({
         element: element,
@@ -272,6 +273,38 @@ var Atropos = (function () {
       var stretchY = (isMultiple ? rotateXPercentage / 100 * params.stretchY : 0) * (params.rotateXInvert ? -1 : 1);
       var stretchZ = isMultiple ? Math.max(Math.abs(rotateXPercentage), Math.abs(rotateYPercentage)) / 100 * params.stretchZ : 0;
       $setTransform(rotateEl, "translate3d(" + stretchX + "%, " + -stretchY + "%, " + -stretchZ + "px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)");
+      
+      // Obtén una referencia al botón por su ID
+      const viewPowerButton = document.getElementById('view-power-button');
+      const hidePowerButton = document.getElementById('hide-power-button');
+
+      // Variable para rastrear el estado actual de la rotación
+      let isRotated = false;
+
+      $setTransform(rotateEl, "translate3d(" + stretchX + "%, " + -stretchY + "%, " + -stretchZ + "px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)");
+
+      // // Maneja el evento de clic en el botón
+      // hidePowerButton.addEventListener('click', () => {
+      //   // Verifica si no está rotado
+      //   if (!isRotated) {
+      //     // Si no está rotado, establece la rotación en 20 grados
+      //     $setTransform(rotateEl, "translate3d(" + stretchX + "%, " + -stretchY + "%, " + -stretchZ + "px) rotateX(" + 25 + "deg) rotateY(" + rotateY + "deg)");
+      //     isRotated = true;
+      //     console.log("Me lancé desde el botón 1");
+      //   }
+      // });
+      
+      // viewPowerButton.addEventListener('click', () => {
+      //   // Verifica si no está rotado
+      //   if (isRotated) {
+      //     // Si no está rotado, establece la rotación en 20 grados
+      //     $setTransform(rotateEl, "translate3d(" + stretchX + "%, " + -stretchY + "%, " + -stretchZ + "px) rotateX(" + rotateX  + "deg) rotateY(" + rotateY + "deg)");
+      //     isRotated = false;
+      //     console.log("Me lancé desde el botón 2");
+      //   }
+      // });
+      
+      
       if (transformOrigin && params.commonOrigin) {
         $setOrigin(rotateEl, transformOrigin);
       }
@@ -330,7 +363,6 @@ var Atropos = (function () {
       if (!params.rotate || !self.isActive) return;
       if (e.pointerType !== 'mouse') {
         if (!params.rotateTouch) return;
-        e.preventDefault();
       }
       var clientX = e.clientX,
         clientY = e.clientY;
@@ -344,7 +376,6 @@ var Atropos = (function () {
         if (isScrolling === false) {
           el.classList.add('atropos-rotate-touch');
           if (e.cancelable) {
-            e.preventDefault();
           }
         }
       }
@@ -353,51 +384,10 @@ var Atropos = (function () {
       }
       setElements(clientX, clientY);
     };
-    var onPointerLeave = function onPointerLeave(e) {
-      elBoundingClientRect = undefined;
-      eventsElBoundingClientRect = undefined;
-      if (!self.isActive) return;
-      if (e && e.type === 'pointerup' && e.pointerType === 'mouse') return;
-      if (e && e.type === 'pointerleave' && e.pointerType !== 'mouse') return;
-      if (typeof params.rotateTouch === 'string' && isScrolling) {
-        el.classList.remove('atropos-rotate-touch');
-      }
-      if (params.alwaysActive) {
-        setElements();
-        if (typeof params.onRotate === 'function') params.onRotate(0, 0);
-        if (typeof params.onLeave === 'function') params.onLeave();
-        return;
-      }
-      queue.push(function () {
-        return el.classList.remove('atropos-active');
-      });
-      $setDuration(scaleEl, params.duration + "ms");
-      $setEasing(scaleEl, '');
-      $setTransform(scaleEl, "translate3d(0,0, " + 0 + "px)");
-      if (shadowEl) {
-        $setDuration(shadowEl, params.duration + "ms");
-        $setEasing(shadowEl, '');
-      }
-      if (highlightEl) {
-        $setDuration(highlightEl, params.duration + "ms");
-        $setEasing(highlightEl, '');
-        $setTransform(highlightEl, "translate3d(0, 0, 0)");
-        $setOpacity(highlightEl, 0);
-      }
-      $setDuration(rotateEl, params.duration + "ms");
-      $setEasing(rotateEl, '');
-      $setTransform(rotateEl, "translate3d(0,0,0) rotateX(0deg) rotateY(0deg)");
-      setChildrenOffset({
-        duration: params.duration + "ms"
-      });
-      self.isActive = false;
-      if (typeof params.onRotate === 'function') params.onRotate(0, 0);
-      if (typeof params.onLeave === 'function') params.onLeave();
-    };
+    
     var onDocumentClick = function onDocumentClick(e) {
       var clickTarget = e.target;
       if (!eventsEl.contains(clickTarget) && clickTarget !== eventsEl && self.isActive) {
-        onPointerLeave();
       }
     };
     var initDOM = function initDOM() {
@@ -452,9 +442,7 @@ var Atropos = (function () {
       $on(eventsEl, 'pointerenter', onPointerEnter);
       $on(eventsEl, 'pointermove', onPointerMove);
       $on(eventsEl, 'touchmove', onTouchMove);
-      $on(eventsEl, 'pointerleave', onPointerLeave);
-      $on(eventsEl, 'pointerup', onPointerLeave);
-      $on(eventsEl, 'lostpointercapture', onPointerLeave);
+      
       if (params.alwaysActive) {
         activate();
         setElements();
@@ -468,9 +456,7 @@ var Atropos = (function () {
       $off(eventsEl, 'pointerenter', onPointerEnter);
       $off(eventsEl, 'pointermove', onPointerMove);
       $off(eventsEl, 'touchmove', onTouchMove);
-      $off(eventsEl, 'pointerleave', onPointerLeave);
-      $off(eventsEl, 'pointerup', onPointerLeave);
-      $off(eventsEl, 'lostpointercapture', onPointerLeave);
+   
       // eslint-disable-next-line
       delete el.__atropos__;
     };
